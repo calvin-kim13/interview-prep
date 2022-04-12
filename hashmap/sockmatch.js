@@ -34,7 +34,7 @@ function sockMerchant(arr) {
   let hash = new Map();
 
   for (const sock of arr) {
-    if (hash.get(sock)) {
+    if (hash.has(sock)) {
       pairs++;
       hash.delete(sock);
     } else {
