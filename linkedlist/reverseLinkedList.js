@@ -59,17 +59,18 @@ class LinkedList {
       return this.head;
     }
     let first = this.head; // value 1
-    this.tail = this.head; // makes 5 the new head to start with
+    this.tail = this.head; // assigning tail to head
     let second = first.next; // value 2
     while (second) {
       // while there is a second value to compare the first one with...
       let temp = second.next; // value 3...everytime it loops, it becomes a new value
       second.next = first; // turns the next value of 2 into 1 so it switches from 1 -> 2 to 2 -> 1
-      first = second; // the variable "first" is now "second"
+      first = second; // the value of "first" is now switched to the value of "second" which is first.next or the value after the first value
       second = temp; // the variable "second" is now 3
     }
-    this.head.next = null;
-    this.head = first;
+    this.head.next = null; // since tail is assigned to the current head (1), set head's "next" to null... the tail's next is equal to null
+    this.head = first; // set the head to the last value in the linked list
+    return this;
   }
 }
 
@@ -80,4 +81,5 @@ reverse.append(2);
 reverse.append(3);
 reverse.append(4);
 reverse.append(5);
-console.log(reverse.remove(1));
+// console.log(reverse.remove(1));
+console.log(reverse.reverse());
