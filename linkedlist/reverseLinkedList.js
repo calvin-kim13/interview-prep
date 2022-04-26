@@ -59,7 +59,7 @@ class LinkedList {
       return this.head;
     }
     let first = this.head; // value 1
-    this.tail = this.head; // assigning tail to head
+    this.tail = this.head; // setting this.tail equal to 1
     let second = first.next; // value 2
     while (second) {
       // while there is a second value to compare the first one with...
@@ -68,7 +68,7 @@ class LinkedList {
       first = second; // the value of "first" is now switched to the value of "second" which is first.next or the value after the first value
       second = temp; // the variable "second" is now 3
     }
-    this.head.next = null; // since tail is assigned to the current head (1), set head's "next" to null... the tail's next is equal to null
+    this.tail.next = null; // this.tail is equal to 1 in this case because above, we say this.tail = this.head which is 1. so we are setting next of 1 to null
     this.head = first; // set the head to the last value in the linked list
     return this;
   }
